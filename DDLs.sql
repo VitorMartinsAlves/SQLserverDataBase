@@ -81,7 +81,21 @@ truncate table NomeDepartamento;
 
 select * from aluno;
 
-/* Utlizamos a função nativa count para retornar o numero de registros na minha tabela
-*/
+-- Utlizamos a função nativa count para retornar o numero de registros na minha tabela
 
 select count (*) from aluno;
+
+-- usamos alias "as" para renomear a coluna
+select count (*) as total_registros from aluno;
+
+/* Pegamos a idade maxima dos alunos */
+select max(idade) as idade_maxima from aluno;
+
+/*Pegamos a idade minima dos alunos */
+select min(idade) as idade_minima from aluno;
+
+/*pegamos a media de idades dos alunos */
+select avg(idade) as media_de_idades from aluno;
+
+/* Somamos as idades */
+select sum(idade) as soma_das_idades from aluno;
