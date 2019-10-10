@@ -42,30 +42,24 @@ INSERT INTO Materia (Materia) VALUES ('Banco de dados');
 
 /* Mostra dados especificos de um aluno */
 --  puxa pelo   id os dados referentes ao aluno
-
 select * from aluno where IdAluno = 2;
 
 -- puxa o determinado nome usando "like" e "%" para definir se o que vem antes ou dps do nome interfere
-
 select * from aluno where nome like '%Bruna%';
 
 
 -- Ordenar por nome do aluno de forma ascendente
-
 select * from aluno order by Nome asc; 
 
 -- Ordenar por nome do aluno de forma decrescente
-
-select * from aluno order by Nome desc; 
+select * from aluno order by Nome desc;
 
 -- Exibir todos os dados da tabela que você juntou
 -- aluno refere-se a tabela aluno e id aluno se refere ao numero do aluno e trabaho puxa pela tabela idaluno a nota do trabalho
-
 inner join aluno on aluno.IdAluno = trabalho.IdAluno;
 
 -- Juntamos as 3 tabelas usando inner  join 
 -- deixamos somentes os dados que nos interessam
-
 Select
 	aluno.Nome,
 	aluno.Ra,
@@ -99,3 +93,23 @@ select avg(idade) as media_de_idades from aluno;
 
 /* Somamos as idades */
 select sum(idade) as soma_das_idades from aluno;
+
+/*Juntamos todas as funçoes em uma unica consulta */
+select 
+	count(*) as total,
+	max(idade) as idade_maxima,
+	min(idade) as idade_minima,
+	avg(idade) as media_das_idades,
+	sum(idade) as soma_das_idades
+from aluno;
+
+-- substring , atributo "Nome" , valor "2" (pega apartir do segundo caractere),valor 3 (pega do 2 até o terceiro caractere )
+select SUBSTRING(Nome,3,6) as cortado from aluno;
+
+/*upper
+Deixa tudo minusculo*/
+select upper(nome) as nome from aluno;
+
+/* lower 
+deixa as letras minusculas */
+select lower(nome) as nome from aluno;
