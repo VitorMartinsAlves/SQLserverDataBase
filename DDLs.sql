@@ -74,3 +74,14 @@ Select
 from tabalho
 inner join materia on materia.IdMateria = trabalho.IdMateria
 inner join aluno on aluno.IdAluno = trabalho.IdAluno;
+
+
+-- apaga todos os registros de uma tabela
+truncate table NomeDepartamento;
+
+select * from aluno;
+
+/* Utlizamos a função nativa count para retornar o numero de registros na minha tabela
+*/
+
+select count (*) from aluno;
